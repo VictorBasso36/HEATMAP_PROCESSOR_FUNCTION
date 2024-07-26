@@ -1,6 +1,6 @@
-import { createApp } from "./createApp";
+import { createApp } from "./app";
 
-const app = createApp();
+export const app = createApp();
 
 const PORT = 3000;
 
