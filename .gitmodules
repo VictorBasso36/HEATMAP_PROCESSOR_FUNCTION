@@ -1,0 +1,3 @@
+[submodule "public/HEATMAP-ANALYTICS-PIXEL"]
+	path = public/HEATMAP-ANALYTICS-PIXEL
+	url = https://github.com/VictorBasso36/HEATMAP-ANALYTICS-PIXEL.git
