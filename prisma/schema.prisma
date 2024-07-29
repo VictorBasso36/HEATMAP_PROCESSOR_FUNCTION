@@ -1,0 +1,41 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+generator dbml {
+  provider = "prisma-dbml-generator"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id                   String    @id @default(cuid())
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  email                String    @unique
+  password             String
+  firstname            String?
+  lastname             String?
+  role                 Role
+  resetPasswordToken   String?   @unique
+  resetPasswordExpires DateTime?
+}
+
+model HeatMap {
+  id     Int    @id @default(autoincrement())
+  x      Float
+  y      Float
+  value  Float
+  domain String
+  ip     String
+}
+
+enum Role {
+  ADMIN
+  USER
+}
