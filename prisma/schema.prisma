@@ -1,10 +1,9 @@
+// EDIT THIS ONLY IN THE DATABASE REPOSITORY, THIS SHOULD BE READ ONLY.
+
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch"]
-}
-
-generator dbml {
-  provider = "prisma-dbml-generator"
+  binaryTargets = ["native"]
 }
 
 datasource db {
